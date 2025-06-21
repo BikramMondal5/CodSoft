@@ -2564,6 +2564,18 @@ p.artficial:before {
     border-radius: 50%;
     margin: 0 auto;
     margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-member-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .team-info h5 {

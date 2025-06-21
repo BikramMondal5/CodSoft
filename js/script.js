@@ -105,14 +105,24 @@
         });
     }
 
-    // :: One Page Nav Active Code
-    if ($.fn.onePageNav) {
-        $('#nav').onePageNav({
-            currentClass: 'active',
-            scrollSpeed: 1500,
-            easing: 'easeOutQuad'
-        });
-    }
+    // :: FAQ Accordion
+    $('.dream-faq-area dt').on('click', function() {
+        const $this = $(this);
+        const $dd = $this.next('dd');
+        
+        // If this is already active, close it
+        if ($this.hasClass('active')) {
+            $this.removeClass('active');
+            $dd.slideUp(300);
+        } else {
+            // Otherwise close all others and open this one
+            $('.dream-faq-area dt').removeClass('active');
+            $('.dream-faq-area dd').slideUp(300);
+            
+            $this.addClass('active');
+            $dd.slideDown(300);
+        }
+    });
 
     // :: Wow Active Code
     if ($window.width() > 767) {
