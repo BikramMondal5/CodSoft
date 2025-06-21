@@ -1,41 +1,4 @@
-/*** 
-====================================================================
-  Table of contents
-====================================================================
-
-- Google Fonts
-- Css Imports
-- General Css Styles
-- Header Area style
-- Welcome Area Styles 
-- Partners area style
-- About us area style 
-- services-block-four style 
-- Demo-video area style 
-- Trust area style 
-- services area style 
-- Call-to-action area style
-- Video area style 
-- Gallery area style 
-- Cool-facts style 
-- Price table style
-- Testimonials area style 
-- Team area style
-- Blog area style 
-- Contact us style 
-- FAQ style -Timeline style 
-- Footer area style 
-
-***/
-
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700');
-/*** 
-
-====================================================================
-  Import All Css
-====================================================================
-
-***/
 
 @import 'bootstrap.min.css';
 @import 'animate.css';
@@ -44,13 +7,6 @@
 @import 'magnific-popup.css';
 @import 'font-awesome.min.css';
 @import 'themify-icons.css';
-/*** 
-
-====================================================================
-  General css style
-====================================================================
-
-***/
 
 * {
     margin: 0;
@@ -667,8 +623,8 @@ ol {
     text-transform: uppercase;
     background-size: 200% auto;
     color: #fff;
-    box-shadow: 0 3ox 20px rgba(0, 0, 0, 0.1);
-    border-radius: 0px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 25px !important;
     background: #4628ff;
     -webkit-transition: all 500ms;
     transition: all 500ms;
@@ -677,6 +633,8 @@ ol {
 .dream-btn:hover {
     background-position: right center;
     color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 25px rgba(70, 40, 255, 0.4);
 }
 
 /* ##### 2.0 Header Area CSS ##### */
@@ -1698,27 +1656,46 @@ p.artficial:before {
 .service_single_content {
     position: relative;
     z-index: 1;
-    padding: 70px 46px 55px;
+    padding: 40px 30px;
     background: #1a1a1d;
     box-shadow: 0 24px 65px 0 rgb(0 0 0 / 64%);
     margin-bottom: 30px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service_single_content:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 70px 0 rgb(0 0 0 / 70%);
+}
+
+.service_icon {
+    margin-bottom: 30px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .service_single_content .service_icon i {
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     color: #fff;
     display: block;
 }
 
-.service_icon {
+.service_single_content h6 {
     margin-bottom: 20px;
-    min-height: 56px;
+    font-size: 22px;
+    text-align: center;
 }
 
-.service_single_content h6 {
-    margin-bottom: 15px;
-    font-size: 24px;
+.service_single_content p {
+    flex: 1;
+    display: flex;
+    align-items: center;
 }
 
 /* ##### 6.0 CTA Area CSS ##### */
@@ -2114,24 +2091,6 @@ p.artficial:before {
     }
     .roadmap_img {
         display: none !important;
-    }
-    #section_5-slider-circle .data_cir::after {
-        left: auto;
-        right: 55px;
-        padding: 5px 7px;
-        -webkit-border-radius: 50px;
-        -moz-border-radius: 50px;
-        border-radius: 50px;
-        top: 4px !important;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        -o-transform: translateY(-50%);
-        transform: translateY(-50%);
-        border: 1px solid #00e4ff;
-    }
-    #section_5-slider-circle .data_cir::after {
-        width: 70px;
     }
 }
 
@@ -2725,6 +2684,10 @@ p.artficial:before {
 .button {
     position: relative;
     z-index: 0;
+    overflow: hidden;
+    display: inline-block;
+    padding
+    top: -2
     overflow: hidden;
     display: inline-block;
     padding: 14px 40px;

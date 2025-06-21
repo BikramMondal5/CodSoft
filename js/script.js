@@ -127,10 +127,14 @@
             if (navbar) {
                 if (window.scrollY > 50) {
                     navbar.style.padding = '10px 20px';
-                    navbar.style.background = 'rgba(255, 255, 255, 0.15)';
+                    navbar.style.background = 'rgba(25, 118, 210, 0.25)'; // More vibrant blue
+                    navbar.style.backdropFilter = 'blur(10px)';
+                    navbar.style.boxShadow = '0 5px 15px rgba(25, 118, 210, 0.2)';
                 } else {
                     navbar.style.padding = '15px 30px';
-                    navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+                    navbar.style.background = 'rgba(25, 118, 210, 0.15)'; // Lighter vibrant blue
+                    navbar.style.backdropFilter = 'blur(5px)';
+                    navbar.style.boxShadow = '0 2px 10px rgba(25, 118, 210, 0.1)';
                 }
             }
         });
@@ -139,38 +143,28 @@
         const searchInput = document.querySelector('.search-bar input');
         if (searchInput) {
             searchInput.addEventListener('focus', () => {
-                searchInput.parentElement.style.transform = 'scale(1.03)';
+                searchInput.parentElement.style.boxShadow = '0 0 8px rgba(25, 118, 210, 0.6)';
             });
-
+            
             searchInput.addEventListener('blur', () => {
-                searchInput.parentElement.style.transform = 'scale(1)';
+                searchInput.parentElement.style.boxShadow = 'none';
             });
         }
-
-        // Profile dropdown functionality
+        
+        // Initialize the profile dropdown functionality
         const profileBadge = document.getElementById('profileBadge');
         const profileDropdown = document.getElementById('profileDropdown');
         
         if (profileBadge && profileDropdown) {
-            profileBadge.addEventListener('click', (e) => {
-                e.stopPropagation();
+            profileBadge.addEventListener('click', () => {
                 profileDropdown.classList.toggle('active');
             });
-
-            // Close dropdown when clicking elsewhere
+            
             document.addEventListener('click', (e) => {
-                if (profileBadge && !profileBadge.contains(e.target) && 
-                    profileDropdown && !profileDropdown.contains(e.target)) {
+                if (!profileBadge.contains(e.target) && !profileDropdown.contains(e.target)) {
                     profileDropdown.classList.remove('active');
                 }
             });
-
-            // Prevent dropdown from closing when clicking inside it
-            if (profileDropdown) {
-                profileDropdown.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                });
-            }
         }
     });
 
