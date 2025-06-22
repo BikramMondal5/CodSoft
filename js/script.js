@@ -97,14 +97,6 @@
         });
     }
 
-    // :: ScrollUp Active Code
-    if ($.fn.scrollUp) {
-        $.scrollUp({
-            scrollSpeed: 1500,
-            scrollText: 'Scroll Top'
-        });
-    }
-
     // :: FAQ Accordion
     $('.dream-faq-area dt').on('click', function() {
         const $this = $(this);
