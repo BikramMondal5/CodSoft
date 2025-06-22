@@ -2698,10 +2698,6 @@ p.artficial:before {
     z-index: 0;
     overflow: hidden;
     display: inline-block;
-    padding
-    top: -2
-    overflow: hidden;
-    display: inline-block;
     padding: 14px 40px;
     font-size: 16px;
     z-index: 2;
@@ -3919,9 +3915,9 @@ body.light-version {
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: rgba(37, 99, 235, 0.25); /* Changed to vibrant blue with transparency */
+    border: 1px solid rgba(59, 130, 246, 0.3); /* Matching blue border with slight opacity */
+    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.2); /* Blue-tinted shadow */
     z-index: 100;
     transition: all 0.3s ease;
     flex-wrap: wrap;

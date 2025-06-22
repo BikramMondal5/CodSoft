@@ -129,7 +129,7 @@
         new WOW().init();
     }
 
-    // Glassmorphism Navbar Functionality
+    // :: Glassmorphism Navbar Functionality
     document.addEventListener('DOMContentLoaded', function() {
         // Add scroll effect to navbar
         window.addEventListener('scroll', () => {
@@ -137,14 +137,14 @@
             if (navbar) {
                 if (window.scrollY > 50) {
                     navbar.style.padding = '10px 20px';
-                    navbar.style.background = 'rgba(25, 118, 210, 0.25)'; // More vibrant blue
+                    navbar.style.background = 'rgba(37, 99, 235, 0.4)'; // More opaque vibrant blue for better visibility
                     navbar.style.backdropFilter = 'blur(10px)';
-                    navbar.style.boxShadow = '0 5px 15px rgba(25, 118, 210, 0.2)';
+                    navbar.style.boxShadow = '0 5px 15px rgba(37, 99, 235, 0.3)';
                 } else {
                     navbar.style.padding = '15px 30px';
-                    navbar.style.background = 'rgba(25, 118, 210, 0.15)'; // Lighter vibrant blue
+                    navbar.style.background = 'rgba(37, 99, 235, 0.25)'; // Match the CSS value
                     navbar.style.backdropFilter = 'blur(5px)';
-                    navbar.style.boxShadow = '0 2px 10px rgba(25, 118, 210, 0.1)';
+                    navbar.style.boxShadow = '0 2px 10px rgba(37, 99, 235, 0.2)';
                 }
             }
         });
