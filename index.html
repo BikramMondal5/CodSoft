@@ -60,6 +60,7 @@
                 <li><a href="#services">Features</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#connectModal">Connect</a></li>
             </ul>
 
             <div class="profile-container">
@@ -720,6 +721,21 @@
 
     <!-- script js -->
     <script src="js/script.js"></script>
+
+    <!-- Connect Modal Script -->
+    <script>
+        $(document).ready(function() {
+            // Show the connect modal
+            $('#connectModal').modal('show');
+
+            // Handle connect button clicks
+            $('.connect-btn').on('click', function() {
+                var walletType = $(this).closest('.wallet-option').find('h6').text();
+                alert('Connecting to ' + walletType + '...');
+                // Here you would add the actual connection logic
+            });
+        });
+    </script>
 
 </body>
 
