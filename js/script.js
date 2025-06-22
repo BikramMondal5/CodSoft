@@ -105,14 +105,14 @@
         // If this is already active, close it
         if ($this.hasClass('active')) {
             $this.removeClass('active');
-            $dd.slideUp(300);
+            $dd.removeClass('active');
         } else {
             // Otherwise close all others and open this one
             $('.dream-faq-area dt').removeClass('active');
-            $('.dream-faq-area dd').slideUp(300);
+            $('.dream-faq-area dd').removeClass('active');
             
             $this.addClass('active');
-            $dd.slideDown(300);
+            $dd.addClass('active');
         }
     });
 
