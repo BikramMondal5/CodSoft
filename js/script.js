@@ -69,13 +69,15 @@
                 items: 3,
                 loop: true,
                 autoplay: true,
-                smartSpeed: 1000,
+                smartSpeed: 3000,
                 margin: 30,
                 center: false,
                 dots: true,
-                nav: true,
-                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+                nav: false,
                 rtl: false,
+                autoplayTimeout: 0, // Set to 0 for continuous movement
+                autoplaySpeed: 5000, // Control the speed of continuous movement (reduced for more reliable animation)
+                slideTransition: 'linear', // Ensure smooth linear movement
                 responsive: {
                     0: {
                         items: 1,
@@ -90,11 +92,72 @@
                         items: 3,
                     }
                 },
-                autoplayHoverPause: true,
-                autoplayTimeout: 5000,
-                animateIn: 'fadeIn',
-                animateOut: 'fadeOut'
+                autoplayHoverPause: false // Don't pause on hover for continuous movement
             });
+            
+            // Force continuous animation
+            testimonialSlider.trigger('play.owl.autoplay', [5000]);
+            
+            // Handle visibility change to prevent animation from stopping
+            var hidden, visibilityState, visibilityChange;
+            
+            if (typeof document.hidden !== "undefined") {
+                hidden = "hidden";
+                visibilityChange = "visibilitychange";
+                visibilityState = "visibilityState";
+            } else if (typeof document.msHidden !== "undefined") {
+                hidden = "msHidden";
+                visibilityChange = "msvisibilitychange";
+                visibilityState = "msVisibilityState";
+            } else if (typeof document.webkitHidden !== "undefined") {
+                hidden = "webkitHidden";
+                visibilityChange = "webkitvisibilitychange";
+                visibilityState = "webkitVisibilityState";
+            }
+            
+            // Restart animation when tab becomes visible
+            document.addEventListener(visibilityChange, function() {
+                if (!document[hidden]) {
+                    // Restart the animation when page becomes visible
+                    testimonialSlider.trigger('stop.owl.autoplay');
+                    setTimeout(function() {
+                        testimonialSlider.trigger('play.owl.autoplay', [5000]);
+                    }, 100);
+                }
+            }, false);
+            
+            // Additional fix: periodically check and restart animation if needed
+            setInterval(function() {
+                // Force restart animation every 30 seconds to prevent stalling
+                testimonialSlider.trigger('stop.owl.autoplay');
+                setTimeout(function() {
+                    testimonialSlider.trigger('play.owl.autoplay', [5000]);
+                }, 50);
+            }, 30000);
+            
+            // Restart animation on window resize
+            $(window).on('resize', function() {
+                testimonialSlider.trigger('stop.owl.autoplay');
+                setTimeout(function() {
+                    testimonialSlider.trigger('play.owl.autoplay', [5000]);
+                }, 100);
+            });
+            
+            // Restart animation on scroll to ensure it stays active
+            $(window).on('scroll', function() {
+                if (isInViewport(testimonialSlider)) {
+                    testimonialSlider.trigger('play.owl.autoplay', [5000]);
+                }
+            });
+            
+            // Helper function to check if element is in viewport
+            function isInViewport(element) {
+                var elementTop = $(element).offset().top;
+                var elementBottom = elementTop + $(element).outerHeight();
+                var viewportTop = $(window).scrollTop();
+                var viewportBottom = viewportTop + $(window).height();
+                return elementBottom > viewportTop && elementTop < viewportBottom;
+            }
         }
     }
 
