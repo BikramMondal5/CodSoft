@@ -4127,55 +4127,204 @@ body.light-version {
     margin: 10px 0;
 }
 
-@media (max-width: 992px) {
-    .glass-navbar {
-        padding: 15px;
-    }
-
-    .profile-name {
-        display: none;
-    }
-
-    .profile-badge {
-        padding: 6px;
+@media (max-width: 991px) {
+    .welcome_area.ico {
+        height: 1000px !important
     }
 }
 
-@media (max-width: 768px) {
+/* Mobile Menu Styles */
+.mobile-menu-btn {
+    display: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    z-index: 1100;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 991px) {
+    .mobile-menu-btn {
+        display: block;
+        order: 3;
+    }
+    
     .glass-navbar {
-        flex-wrap: wrap;
-        gap: 15px;
+        padding: 10px 20px !important;
+        justify-content: space-between;
+    }
+    
+    .glass-nav-links {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 280px;
+        height: 100vh;
+        background: rgba(13, 0, 59, 0.97);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 80px 30px 30px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .glass-nav-links.active {
+        right: 0;
+    }
+    
+    .glass-nav-links li {
+        margin: 15px 0;
+        width: 100%;
+    }
+    
+    .glass-nav-links li a {
+        display: block;
+        padding: 10px 0;
     }
 
     .logo-and-search {
-        width: 100%;
-        justify-content: space-between;
+        flex: 1;
     }
-
-    .glass-nav-links {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .profile-container {
-        margin-left: 0;
+    
+    .search-bar {
+        display: none;
     }
 }
 
-@media (max-width: 480px) {
-    .search-bar {
-        max-width: 150px;
-    }
+/* Responsive Testimonials */
+.testimonial-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
 
+.testimonial-footer .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.testimonial-footer .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-footer .client-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.testimonial-footer .client-info span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 767px) {
+    .service_single_content {
+        min-height: auto;
+        padding: 25px 20px;
+    }
+    
+    .service_icon {
+        min-height: 40px;
+        margin-bottom: 15px;
+    }
+    
+    .service_single_content h6 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    /* Vertical social icons adjustment */
+    .vertical-social {
+        position: fixed;
+        left: -60px;
+        width: auto;
+        height: auto !important;
+        padding: 15px 10px;
+        transition: left 0.3s ease;
+    }
+    
+    .vertical-social:hover {
+        left: 0;
+    }
+    
+    .vertical-social li a {
+        font-size: 18px;
+    }
+}
+
+/* Responsive Glass Navbar */
+@media (max-width: 767px) {
+    .glass-navbar {
+        padding: 10px 15px !important;
+    }
+    
+    .glass-logo {
+        font-size: 18px;
+    }
+    
+    .logo-circle, .logo-inner {
+        display: none;
+    }
+    
     .project-name {
         display: none;
     }
-
+    
+    .profile-badge .profile-name {
+        display: none;
+    }
+    
     .profile-dropdown {
-        width: 200px;
-        right: -10px;
+        right: 0;
+        width: 250px;
+    }
+}
+
+/* Fix parallax on mobile */
+@media (max-width: 767px) {
+    .welcome_area {
+        height: 600px !important;
+    }
+    
+    .divimage.dzsparallaxer--target {
+        height: 100% !important;
+        width: 100% !important;
+    }
+}
+
+/* Make FAQ responsive */
+@media (max-width: 767px) {
+    .faq-timeline-area .faq-img-wrapper {
+        display: none;
     }
 }

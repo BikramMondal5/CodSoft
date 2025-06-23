@@ -64,49 +64,38 @@
         // Testimonials Slider
         var testimonialSlider = $('.testimonials-slider');
         
-        testimonialSlider.owlCarousel({
-            items: 3,
-            loop: true,
-            autoplay: true,
-            smartSpeed: 1000,
-            margin: 30,
-            center: false,
-            dots: true,
-            nav: true,
-            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-            rtl: false, // Right to left
-            responsive: {
-                0: {
-                    items: 1,
+        if (testimonialSlider.length) {
+            testimonialSlider.owlCarousel({
+                items: 3,
+                loop: true,
+                autoplay: true,
+                smartSpeed: 1000,
+                margin: 30,
+                center: false,
+                dots: true,
+                nav: true,
+                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+                rtl: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    576: {
+                        items: 1,
+                    },
+                    768: {
+                        items: 2,
+                    },
+                    992: {
+                        items: 3,
+                    }
                 },
-                576: {
-                    items: 1,
-                },
-                768: {
-                    items: 2,
-                },
-                992: {
-                    items: 3,
-                }
-            },
-            autoplayHoverPause: true,
-            autoplayTimeout: 5000,
-            animateIn: 'fadeIn',
-            animateOut: 'fadeOut',
-            onInitialized: function() {
-                // Add custom animations to each item
-                testimonialSlider.find('.owl-item').each(function(index) {
-                    $(this).css({
-                        'animation-delay': index * 0.2 + 's',
-                        'opacity': '0'
-                    });
-                    
-                    setTimeout(function() {
-                        $(this).css('opacity', '1');
-                    }.bind(this), index * 200);
-                });
-            }
-        });
+                autoplayHoverPause: true,
+                autoplayTimeout: 5000,
+                animateIn: 'fadeIn',
+                animateOut: 'fadeOut'
+            });
+        }
     }
 
     // :: Countdown Active Code
@@ -212,6 +201,39 @@
             document.addEventListener('click', (e) => {
                 if (!profileBadge.contains(e.target) && !profileDropdown.contains(e.target)) {
                     profileDropdown.classList.remove('active');
+                }
+            });
+        }
+        
+        // Mobile menu functionality
+        const mobileMenuBtn = document.createElement('button');
+        mobileMenuBtn.classList.add('mobile-menu-btn');
+        mobileMenuBtn.innerHTML = '<span></span><span></span><span></span>';
+        
+        const navbar = document.querySelector('.glass-navbar');
+        const navLinks = document.querySelector('.glass-nav-links');
+        
+        if (navbar && navLinks) {
+            navbar.insertBefore(mobileMenuBtn, navbar.querySelector('.profile-container'));
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target) && navLinks.classList.contains('active')) {
+                    mobileMenuBtn.classList.remove('active');
+                    navLinks.classList.remove('active');
                 }
             });
         }
