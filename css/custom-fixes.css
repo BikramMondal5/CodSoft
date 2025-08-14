@@ -1,0 +1,10 @@
+/* Move the "Create Your Account" button in the Why CryptoGen Matters section */
+#create-btn {
+    margin-left: 20px; /* Adjust this value to move the button to the right */
+}
+
+/* Move the social icons in the Connect With Us section to the left */
+.social-links .social-icon .example-2 {
+    padding-left: 0;
+    margin-left: -15px; /* Adjust this value to move icons more to the left */
+}
