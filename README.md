@@ -28,8 +28,6 @@ CodSoft is a modern and responsive web project designed to showcase a variety of
    ```
 3. Open `index.html` in your browser to view the project.
 
----
-
 ## 📸 Screenshot
 ![Project Screenshot](img/bg-img/banner-bg.jpg)
 
