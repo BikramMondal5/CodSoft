@@ -31,8 +31,6 @@ CodSoft is a modern and responsive web project designed to showcase a variety of
 ## 📸 Screenshot
 ![Project Screenshot](img/bg-img/banner-bg.jpg)
 
----
-
 ## 🚀 How to Use
 1. Clone the repository and navigate to the project folder.
 2. Open the `index.html` file in your preferred browser.
