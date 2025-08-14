@@ -10,8 +10,6 @@ CodSoft is a modern and responsive web project designed to showcase a variety of
 - ⚡ Optimized for performance
 - 🛠️ Customizable styles and components
 
----
-
 ## 🛠️ Technologies Used
 - **HTML5**: 🏗️ For structuring the content
 - **CSS3**: 🎨 For styling and animations
