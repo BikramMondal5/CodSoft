@@ -1,5 +1,6 @@
 # CodSoft 
 
+![Preview](img/bg-img/CryptoGen.png)
 CodSoft is a modern and responsive web project designed to showcase a variety of features and functionalities. It includes a clean and elegant design, making it suitable for various use cases such as portfolios, business websites, or personal projects.
 
 ## 🌟 Features
@@ -27,9 +28,6 @@ CodSoft is a modern and responsive web project designed to showcase a variety of
    cd CodSoft
    ```
 3. Open `index.html` in your browser to view the project.
-
-## 📸 Screenshot
-![Project Screenshot](img/bg-img/banner-bg.jpg)
 
 ## 🚀 How to Use
 1. Clone the repository and navigate to the project folder.
