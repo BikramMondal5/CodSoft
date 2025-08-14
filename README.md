@@ -17,8 +17,6 @@ CodSoft is a modern and responsive web project designed to showcase a variety of
 - **Bootstrap**: 📱 For responsive design
 - **Font Awesome**: 🔤 For icons
 
----
-
 ## ⚙️ Installation
 1. Clone the repository:
    ```bash
