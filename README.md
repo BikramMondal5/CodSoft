@@ -1,6 +1,6 @@
 # CodSoft 
 
-![Preview](img/bg-img/CryptoGen.png)
+![Preview](img/CryptoGen.png)
 CodSoft is a modern and responsive web project designed to showcase a variety of features and functionalities. It includes a clean and elegant design, making it suitable for various use cases such as portfolios, business websites, or personal projects.
 
 ## 🌟 Features
